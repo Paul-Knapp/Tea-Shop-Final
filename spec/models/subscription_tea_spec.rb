@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe SubscriptionTea, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'associations' do
+    should belong_to(:subscription)
+    should belong_to(:tea)
+  end 
 end
