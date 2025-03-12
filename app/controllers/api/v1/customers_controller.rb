@@ -4,5 +4,6 @@ class Api::V1::CustomersController < ApplicationController
   end
 
   def show
+    
   end
 end
