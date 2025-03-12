@@ -28,11 +28,11 @@ customers = Customer.create!([
 
 # Create Subscriptions
 subscriptions = Subscription.create!([
-  { title: "Monthly Green Tea", price: 15.99, status: "active", frequency: "monthly", customer: customers[0] },
-  { title: "Biweekly Black Tea", price: 12.99, status: "active", frequency: "biweekly", customer: customers[1] },
-  { title: "Weekly Oolong Tea", price: 18.99, status: "cancelled", frequency: "weekly", customer: customers[2] },
-  { title: "Monthly White Tea", price: 14.99, status: "active", frequency: "monthly", customer: customers[3] },
-  { title: "Herbal Tea Sampler", price: 20.99, status: "cancelled", frequency: "quarterly", customer: customers[4] }
+  { title: "Monthly Green Tea", price: 15.99, status: "active", image_url: "https://example.com/morning_boost.jpg", frequency: "monthly", customer: customers[0] },
+  { title: "Biweekly Black Tea", price: 12.99, status: "active", image_url: "https://example.com/relax_unwind.jpg", frequency: "biweekly", customer: customers[1] },
+  { title: "Weekly Oolong Tea", price: 18.99, status: "cancelled",image_url: "https://example.com/classic_favorites.jpg", frequency: "weekly", customer: customers[2] },
+  { title: "Monthly White Tea", price: 14.99, status: "active", image_url: "https://example.com/tea_lovers.jpg", frequency: "monthly", customer: customers[3] },
+  { title: "Herbal Tea Sampler", price: 20.99, status: "cancelled", image_url: "https://example.com/matcha_madness.jpg", frequency: "quarterly", customer: customers[4] }
 ])
 
 # Assign Teas to Subscriptions

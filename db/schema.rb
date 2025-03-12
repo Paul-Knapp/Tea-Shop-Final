@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_11_041140) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_12_002335) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,24 +32,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_11_041140) do
     t.index ["show_id"], name: "index_schedule_shows_on_show_id"
   end
 
-  create_table "schedules", force: :cascade do |t|
-    t.string "title"
-    t.string "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_schedules_on_user_id"
-  end
-
-  create_table "shows", force: :cascade do |t|
-    t.string "artist"
-    t.string "location"
-    t.string "date"
-    t.integer "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "subscription_teas", force: :cascade do |t|
     t.bigint "subscription_id", null: false
     t.bigint "tea_id", null: false
@@ -67,6 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_11_041140) do
     t.bigint "customer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
     t.index ["customer_id"], name: "index_subscriptions_on_customer_id"
   end
 
@@ -87,9 +70,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_11_041140) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "schedule_shows", "schedules"
-  add_foreign_key "schedule_shows", "shows"
-  add_foreign_key "schedules", "users"
   add_foreign_key "subscription_teas", "subscriptions"
   add_foreign_key "subscription_teas", "teas"
   add_foreign_key "subscriptions", "customers"
