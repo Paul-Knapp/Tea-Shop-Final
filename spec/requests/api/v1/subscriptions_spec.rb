@@ -81,5 +81,16 @@ before(:each) do
       json = JSON.parse(response.body, symbolize_names: true)
       expect(json[:error]).to eq("Subscription not found")
     end
+
+    describe "Error Messages" do
+      it "returns an error for an invalid subscription Id" do
+        get "/api/v1/subscriptions/1000"
+  
+        expect(response).to have_http_status(:not_found)
+  
+        json = JSON.parse(response.body, symbolize_names: true)
+        expect(json[:error]).to eq("Subscription not found")
+      end
+    end
   end
 end

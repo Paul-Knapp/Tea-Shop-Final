@@ -23,15 +23,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_12_002335) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "schedule_shows", force: :cascade do |t|
-    t.bigint "schedule_id", null: false
-    t.bigint "show_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["schedule_id"], name: "index_schedule_shows_on_schedule_id"
-    t.index ["show_id"], name: "index_schedule_shows_on_show_id"
-  end
-
   create_table "subscription_teas", force: :cascade do |t|
     t.bigint "subscription_id", null: false
     t.bigint "tea_id", null: false
@@ -58,14 +49,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_12_002335) do
     t.text "description"
     t.integer "temperature"
     t.integer "brew_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
